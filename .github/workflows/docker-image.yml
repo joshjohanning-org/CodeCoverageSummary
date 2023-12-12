@@ -20,9 +20,8 @@ jobs:
     - name: Build the Docker image
       run: 
         docker build . --file Dockerfile --tag test123j.azurecr.io/actions/codecoveragesummary:${{ github.run_number }}
-        docker tag test123j.azurecr.io/actions/codecoveragesummary:${{ github.run_number }} \
-          test123j.azurecr.io/actions/codecoveragesummary:latest
+
     - name: Push the Docker iamge
       run: | 
         docker push test123j.azurecr.io/actions/codecoveragesummary:${{ github.run_number }}
-        docker push test123j.azurecr.io/actions/codecoveragesummary:latest
+        # docker push test123j.azurecr.io/actions/codecoveragesummary:latest
